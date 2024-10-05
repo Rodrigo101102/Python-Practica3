@@ -90,7 +90,6 @@ class Usuario:
             print("¡Bien hecho! Estás consumiendo suficientes calorías para mantener tu energía.")
 
 
-# Función para pedir un número válido
 def pedir_numero(mensaje):
     while True:
         try:
@@ -99,7 +98,6 @@ def pedir_numero(mensaje):
             print("Error: Debe ingresar un número válido.")
 
 
-# Función principal para interactuar con el sistema
 def main():
     print("¡Bienvenido al Sistema de Gestión de Bienestar Físico!")
     
