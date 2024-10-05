@@ -20,17 +20,41 @@ def calcular():
     for numero in listaNumero:
         sumaNumero+=numero
     promedio=round(sumaNumero/(len(listaNumero)),2)
-    print(promedio)
     lista_ordenada=sorted(listaNumero)
     medio=len(listaNumero)//2
     if len(listaNumero)%2==0:
         numero1=lista_ordenada[medio-1]
         numero2=lista_ordenada[medio]
         media=(numero1+numero2)/2
-        print(media)
     else:
         media=lista_ordenada[medio]
-        print(media)
+          # Calcular la moda usando solo bucles
+    frecuencias = {}
+    
+    # Contar frecuencias
+    for num in listaNumero:
+        if num in frecuencias:
+            frecuencias[num] += 1
+        else:
+            frecuencias[num] = 1
+
+    max_frecuencia = 0
+    for v in frecuencias.values():
+        if v > max_frecuencia:
+            max_frecuencia = v
+
+    modas = []
+    for k in frecuencias:  # Agregar las modas a la lista
+        if frecuencias[k] == max_frecuencia:
+            modas.append(k)
+
+    return media, promedio, modas
 
 ingresarNumero()
-calcular()
+resultado = calcular()
+
+if resultado:
+    media, promedio, modas = resultado
+    print("Media:", media)
+    print("Promedio:", promedio)
+    print("Moda:", modas)
